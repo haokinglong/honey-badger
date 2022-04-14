@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<included>
+
+    <conversionRule conversionWord="ip" converterClass="com.honey.badger.core.support.IpAddressConverter" />
+    <springProperty scope="context" name="appId" source="honey.badger.log.appId" />
+    <springProperty scope="context" name="module" source="honey.badger.log.module" />
+    <springProperty scope="context" name="server_port" source="server.port" />
+
+    <!--
+        在业务系统中添加该配置即可
+        honey.badger.log.appId = badger
+        honey.badger.log.module = ${spring.application.name}
+    -->
+    <!-- appID | module |  dateTime | level | requestID | traceID | requestIP | userIP | serverIP | serverPort | processID | thread | location | detailInfo-->
+    <property name="CONSOLE_LOG_PATTERN" value="%clr(${appId}){cyan}|%clr(${module}){cyan}|%clr(%d{ISO8601}){faint}|%clr(%p)|%X{requestId}|%X{X-Transaction-Id:-}|%X{requestIp}|%X{userIp}|%ip|${server_port}|${PID}|%clr(%t){faint}|%clr(%.40logger{39}){cyan}.%clr(%method){cyan}:%L|%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+    <property name="FILE_LOG_PATTERN" value="%clr(${appId}){cyan}|${module}|%d{ISO8601}|%p|%X{requestId}|%X{X-Transaction-Id:-}|%X{requestIp}|%X{userIp}|%ip|${server_port}|${PID}|%t|%.40logger{39}.%method:%L|%m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"/>
+
+</included>

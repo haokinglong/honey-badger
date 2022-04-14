@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.2.2.RELEASE</version>
+    </parent>
+
+    <modules>
+        <module>badger-core</module>
+        <module>badger-web-core</module>
+        <module>badger-feign</module>
+        <module>badger-swagger</module>
+        <module>badger-kafka</module>
+        <module>badger-design</module>
+        <module>badger-web-starter</module>
+        <module>badger-event-hub</module>
+        <module>badger-error-record</module>
+        <module>badger-cache</module>
+    </modules>
+
+    <groupId>com.honey</groupId>
+    <artifactId>badger-parent</artifactId>
+    <version>1.0.1-SNAPSHOT</version>
+    <name>honey-badger</name>
+    <packaging>pom</packaging>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <maven.version>3.3.9</maven.version>
+        <java.version>1.8</java.version>
+
+        <!-- commons -->
+        <commons-lang3.version>3.5</commons-lang3.version>
+        <fastjson.version>1.2.60</fastjson.version>
+        <janino.version>2.7.8</janino.version>
+        <podam.version>7.2.3.RELEASE</podam.version>
+        <guava.version>28.1-jre</guava.version>
+        <jackson.version>2.9.9</jackson.version>
+        <jackson-databind.version>2.9.10.1</jackson-databind.version>
+        <feign.version>10.2.3</feign.version>
+
+        <!-- compile -->
+        <lombok.version>1.18.2</lombok.version>
+
+        <!-- database -->
+        <mapper.version>1.1.2</mapper.version>
+        <pagehelper.version>5.1.2</pagehelper.version>
+        <mybatis-spring-boot.version>1.2.1</mybatis-spring-boot.version>
+        <druid.version>1.1.20</druid.version>
+
+        <!-- logger -->
+        <logback.version>1.2.3</logback.version>
+
+        <!-- test -->
+        <powermock.version>1.7.1</powermock.version>
+
+        <spring-boot.version>2.2.2.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.RELEASE</spring-cloud.version>
+
+        <badger.version>1.0.1-SNAPSHOT</badger.version>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <nacos.version>2.1.2.RELEASE</nacos.version>
+        <ahas-sentinel-client.version>1.9.2</ahas-sentinel-client.version>
+        <hutool.version>5.5.4</hutool.version>
+        <swagger.version>1.5.23</swagger.version>
+    </properties>
+
+    <!--  受管控的依赖,子项目使用时需要添加依赖,但无需添加版本,版本统一受parent管控  -->
+    <dependencyManagement>
+        <dependencies>
+            <!-- spring cloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>com.alibaba.csp</groupId>
+                <artifactId>ahas-sentinel-client</artifactId>
+                <version>${ahas-sentinel-client.version}</version>
+            </dependency>
+            <!-- nacos  -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>io.projectreactor</groupId>
+                        <artifactId>reactor-test</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.powermock</groupId>
+                        <artifactId>powermock-module-junit4</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.powermock</groupId>
+                        <artifactId>powermock-api-mockito2</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.junit.jupiter</groupId>
+                        <artifactId>junit-jupiter</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.mockito</groupId>
+                        <artifactId>mockito-junit-jupiter</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.plugin/spring-plugin-core -->
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-core</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.plugin/spring-plugin-metadata -->
+            <dependency>
+                <groupId>org.springframework.plugin</groupId>
+                <artifactId>spring-plugin-metadata</artifactId>
+                <version>2.0.0.RELEASE</version>
+            </dependency>
+            <!-- hutool-->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-all</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+</project>
