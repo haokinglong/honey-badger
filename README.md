@@ -13,10 +13,8 @@
 * `badger-web-core`
 * `badger-web-starter`
 * `badger-swagger`
-* `badger-multi-amq`
 * `badger-error-record`
 * `badger-event-hub`
-* `badger-tablestore`
 * `badger-kafka`
 
 ## 各包的用途介绍
