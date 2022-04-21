@@ -129,22 +129,7 @@
 </dependency>
 ```
 
-### 1.7 `badger-tablestore`
-
-为便利使用Tablestore而开发的公共组件，目标是实现Tablestore的Spring Boot自动配置，简化增删改查的操作，并提供一些基础的工具类。
-
-引用使用:
-
-```xml
-
-<dependency>
-    <groupId>com.honey</groupId>
-    <artifactId>badger-tablestore</artifactId>
-    <version>${badger.version}</version>
-</dependency>
-```
-
-### 1.8 `badger-kafka`
+### 1.7 `badger-kafka`
 
 `Kafka`核心包,目前主要提供了`producer`的多实例配置,消费者的还未完成
 
@@ -159,21 +144,7 @@
 </dependency>
 ```
 
-### 1.9 `badger-multi-amq`
-
-该包是多实例的`RabbitMq`,目前还处于开发验证中
-
-引用使用:
-
-```xml
-
-<dependency>
-    <groupId>com.honey</groupId>
-    <artifactId>badger-multi-amq</artifactId>
-    <version>${badger.version}</version>
-</dependency>
-```
-### 1.10 `badger-error-record`
+### 1.8 `badger-error-record`
 
 该异常记录公共包主要是为了使开发人员当遇到业务出现异常错误时兜底记录当时的数据信息,以便事后请求重放或者数据恢复
 此公共包提供两种方式供选择
@@ -193,7 +164,7 @@
 </dependency>
 ```
 
-### 1.11 `badger-cache`
+### 1.9 `badger-cache`
 
 该核心包自定义了`Spring Cache`的核心实现,提供了更为灵活且丰富的缓存能力
 
@@ -213,7 +184,7 @@
 </dependency>
 ```
 
-### 1.12 `badger-web-starter`
+### 1.10 `badger-web-starter`
 
 该包主要是针对`web`服务的`POM`引用做了简单的聚合,便于精简`POM`依赖项目
 
