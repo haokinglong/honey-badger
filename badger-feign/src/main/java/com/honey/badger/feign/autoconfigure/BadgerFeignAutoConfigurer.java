@@ -30,6 +30,6 @@ public class BadgerFeignAutoConfigurer {
 
     @Bean
     public ErrorDecoder badgerErrorDecoder(BadgerFeignProperties badgerFeignProperties) {
-        return new BadgerErrorDecoder(badgerFeignProperties);
+        return new BadgerErrorDecoder();
     }
 }

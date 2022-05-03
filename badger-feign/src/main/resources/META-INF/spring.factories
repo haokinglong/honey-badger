@@ -1,2 +1,2 @@
 # Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.honey.badger.feign.autoconfigure.BadgerFeignAutoConfigurer
+org.springframework.boot.com.honey.badger.ratelimit.autoconfigure.EnableAutoConfiguration=com.honey.badger.feign.com.honey.badger.ratelimit.autoconfigure.BadgerFeignAutoConfigurer

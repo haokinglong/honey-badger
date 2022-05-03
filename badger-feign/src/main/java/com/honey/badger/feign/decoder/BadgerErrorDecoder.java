@@ -29,12 +29,6 @@ public class BadgerErrorDecoder implements ErrorDecoder {
     private static final int STATUS_504 = 504;
     private static final int STATUS_429 = 429;
 
-    private final BadgerFeignProperties badgerFeignProperties;
-
-    public BadgerErrorDecoder(BadgerFeignProperties imFeignProperties) {
-        this.badgerFeignProperties = imFeignProperties;
-    }
-
     @SneakyThrows
     @Override
     public Exception decode(String method, Response response) {
@@ -45,12 +39,6 @@ public class BadgerErrorDecoder implements ErrorDecoder {
         }
 
         Map<String, Collection<String>> headers = new HashMap<>(request.headers());
-        // 有请求头且配置不为空时进行请求头日志过滤
-        if (CollUtil.isNotEmpty(headers) && CollUtil.isNotEmpty(badgerFeignProperties.getNoLogHeaders())) {
-            for (String noLogHeader : badgerFeignProperties.getNoLogHeaders()) {
-                headers.remove(noLogHeader);
-            }
-        }
 
         log.error("request.url ={}, request.httpMethod ={}, request.headers ={}, response ={}", request.url(), request.httpMethod(), headers, response);
         BaseEnum<String> bizErrorEnum = getBizErrorEnumFromHttpStatus(response.status());

@@ -1,1 +1,1 @@
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.honey.badger.eventhub.autoconfigure.EventHubAutoConfiguration
+org.springframework.boot.com.honey.badger.ratelimit.autoconfigure.EnableAutoConfiguration=com.honey.badger.eventhub.com.honey.badger.ratelimit.autoconfigure.EventHubAutoConfiguration

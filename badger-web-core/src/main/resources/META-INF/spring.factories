@@ -1,4 +1,4 @@
 # Auto Configure
-org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.honey.badger.webcore.config.StringToDateConverter,\
+org.springframework.boot.com.honey.badger.ratelimit.autoconfigure.EnableAutoConfiguration=com.honey.badger.webcore.config.StringToDateConverter,\
 com.honey.badger.webcore.config.WebConfig,\
 com.honey.badger.webcore.http.handler.BadgerExceptionHandler
