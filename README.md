@@ -16,6 +16,7 @@
 * `badger-error-record`
 * `badger-event-hub`
 * `badger-kafka`
+* `badger-rate-limiter`
 
 ## 各包的用途介绍
 
@@ -199,4 +200,17 @@
 </dependency>
 ```
 
+### 1.11 `badger-rate-limiter`
+
+该包主要提供了基于`redis lua`脚本实现的滑动窗口限流
+
+引用使用:
+
+```xml
+<dependency>
+   <groupId>com.honey</groupId>
+   <artifactId>badger-rate-limiter</artifactId>
+   <version>${badger.version}</version>
+</dependency>
+```
 

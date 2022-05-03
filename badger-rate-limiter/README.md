@@ -14,7 +14,6 @@
 添加包依赖即可使用
 
 ```xml
-
 <dependency>
     <groupId>com.honey</groupId>
     <artifactId>badger-rate-limiter</artifactId>
